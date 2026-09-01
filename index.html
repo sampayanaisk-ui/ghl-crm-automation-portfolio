@@ -368,6 +368,32 @@ footer {
   .steps {
     grid-template-columns: 1fr;
   }
+}.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.project-gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-gallery img:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(37, 99, 235, 0.25);
+}
+
+@media (max-width: 700px) {
+  .project-gallery {
+    grid-template-columns: 1fr;
+  }
 }
   </style>
 </head>
@@ -648,31 +674,7 @@ footer {
 
     <div class="project">
 
-      <h3>Dental Clinic CRM & Booking System</h3>
-
-      <p>
-        A practical GoHighLevel setup designed to manage
-        patient inquiries, appointment bookings, forms,
-        and automated communication.
-      </p>
-
-      <ul>
-
-        <li>CRM contact management</li>
-
-        <li>Dental assessment and patient forms</li>
-
-        <li>Appointment booking calendar</li>
-
-        <li>Staff availability configuration</li>
-
-        <li>Lead and appointment pipeline</li>
-
-        <li>Appointment confirmation and reminder workflows</li>
-
-        <li>Automated follow-up communication</li>
-
-      </ul>
+     
 
     </div>
 
