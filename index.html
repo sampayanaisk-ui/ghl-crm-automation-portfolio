@@ -395,7 +395,105 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+    .evidence-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.evidence-card {
+    background: #08111f;
+    border: 1px solid rgba(59, 130, 246, 0.35);
+    border-radius: 16px;
+    padding: 30px;
+    color: white;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.evidence-card:hover {
+    transform: translateY(-5px);
+    border-color: #1683ff;
+    box-shadow: 0 15px 40px rgba(37, 99, 235, 0.2);
+}
+
+.evidence-card span {
+    font-size: 32px;
+}
+
+.evidence-card h4 {
+    font-size: 22px;
+    margin: 12px 0 8px;
+}
+
+.evidence-card p {
+    color: #9db4d0;
+    margin: 0;
+}
   </style>
+  .evidence-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 9999;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.modal-content {
+    max-width: 1100px;
+    margin: 40px auto;
+    background: #07101d;
+    border: 1px solid rgba(59, 130, 246, 0.35);
+    border-radius: 20px;
+    padding: 35px;
+    position: relative;
+}
+
+.modal-content h2 {
+    color: white;
+    margin-bottom: 25px;
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.modal-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.modal-gallery img {
+    width: 100%;
+    border-radius: 14px;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+@media (max-width: 700px) {
+    .evidence-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .evidence-modal {
+        padding: 15px;
+    }
+}
 </head>
 
 <body>
@@ -682,39 +780,22 @@ footer {
     </p>
 
     <div class="project-gallery">
+<div class="evidence-buttons">
 
-        <div class="project-gallery">
+    <button class="evidence-card" onclick="openEvidence('crm')">
+        <span>📊</span>
+        <h4>CRM Evidence</h4>
+        <p>View CRM setup & patient journey</p>
+    </button>
 
-    <h4>CRM Evidence</h4>
-<a href=// Show the modal
-$('#myModal').modal('show');
- 
-   target="_blank" 
-   class="btn">
-  CRM Evidence
-</a>
-          
+    <button class="evidence-card" onclick="openEvidence('automation')">
+        <span>⚙️</span>
+        <h4>Automation Evidence</h4>
+        <p>View workflows & execution logs</p>
+    </button>
 
-   <img src="Screenshot%202026-09-02%20000710.png"
-     alt="CRM Contact Management">
-
- <img src="Screenshot%202026-09-02%20000918.png"
-     alt="Patient Journey CRM Pipeline">
-
-    <h4>Automation Evidence</h4>
-
-    <img src="Screenshot%202026-08-25%20134046.png"
-         alt="Dental Appointment Confirmation and Reminder Workflow">
-
-    <img src="Screenshot%202026-08-25%20134122.png"
-         alt="Review Request Follow-Up Workflow">
-
-    <img src="Screenshot%202026-08-25%20134202.png"
-         alt="Recall Reminder Workflow">
-
-    <img src="Screenshot%202026-08-25%20134219.png"
-         alt="GHL Automation Workflow">
-
+</div>
+      
 </div>
 
     </div>
@@ -751,6 +832,78 @@ $('#myModal').modal('show');
     © 2026 Archie Sampayan • GHL CRM & Automation Specialist
 
   </footer>
+<div id="evidenceModal" class="evidence-modal">
 
+    <div class="modal-content">
+
+        <button class="close-modal" onclick="closeEvidence()">×</button>
+
+        <h2 id="modalTitle"></h2>
+
+        <div id="modalImages" class="modal-gallery"></div>
+
+    </div>
+
+</div>
+  <script>
+function openEvidence(type) {
+
+    const modal = document.getElementById("evidenceModal");
+    const title = document.getElementById("modalTitle");
+    const images = document.getElementById("modalImages");
+
+    images.innerHTML = "";
+
+    if (type === "crm") {
+
+        title.textContent = "CRM Evidence";
+
+        images.innerHTML = `
+            <img src="Screenshot%202026-09-02%20000710.png"
+                 alt="CRM Contact Management">
+
+            <img src="Screenshot%202026-09-02%20000918.png"
+                 alt="Patient Journey CRM Pipeline">
+        `;
+
+    }
+
+    if (type === "automation") {
+
+        title.textContent = "Automation Evidence";
+
+        images.innerHTML = `
+            <img src="Screenshot%202026-08-25%20134046.png"
+                 alt="Dental Appointment Confirmation and Reminder Workflow">
+
+            <img src="Screenshot%202026-08-25%20134122.png"
+                 alt="Review Request Follow-Up Workflow">
+
+            <img src="Screenshot%202026-08-25%20134202.png"
+                 alt="Recall Reminder Workflow">
+
+            <img src="Screenshot%202026-08-25%20134219.png"
+                 alt="GHL Automation Workflow">
+        `;
+
+    }
+
+    modal.style.display = "block";
+}
+
+function closeEvidence() {
+    document.getElementById("evidenceModal").style.display = "none";
+}
+
+window.onclick = function(event) {
+
+    const modal = document.getElementById("evidenceModal");
+
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+
+}
+</script>
 </body>
 </html>
