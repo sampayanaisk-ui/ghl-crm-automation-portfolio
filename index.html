@@ -393,34 +393,36 @@ footer {
 .evidence-buttons {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin: 35px auto 0;
-    max-width: 900px;
+    gap: 28px;
+    max-width: 960px;
+    margin: 40px auto 0;
 }
 
 .evidence-card {
+    width: 100%;
     min-height: 230px;
     padding: 28px;
     box-sizing: border-box;
-}
+
+    background: #08111f;
+    border: 1px solid rgba(59, 130, 246, 0.35);
+    border-radius: 16px;
+
+    color: white;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s ease;
 }
 
-.evidence-card:hover {
-    transform: translateY(-5px);
-    border-color: #1683ff;
-    box-shadow: 0 15px 40px rgba(37, 99, 235, 0.2);
-}
-
-.evidence-card span {
-    font-size: 32px;
-}
-
-.evidence-card h4 {
+.evidence-card h4,
+.evidence-card h3 {
+    color: white;
     margin: 15px 0 10px;
     font-size: 26px;
 }
 
 .evidence-card p {
+    color: #8fb3df;
     margin: 0;
     font-size: 16px;
 }
