@@ -793,6 +793,12 @@ footer {
         <p>View workflows & execution logs</p>
     </button>
 
+    <button onclick="openEvidence('appointment')" class="evidence-card">
+    <div class="evidence-icon">📅</div>
+    <h3>Appointment<br>Booking</h3>
+    <p>View assessment & booking flow</p>
+</button>
+  
 </div>
       
 </div>
@@ -885,6 +891,22 @@ function openEvidence(type) {
                  alt="GHL Automation Workflow">
         `;
 
+    }    }   // closing sa automation
+
+    if (type === "appointment") {
+
+        title.textContent = "Appointment Booking";
+
+        images.innerHTML = `
+            <img src="Screenshot%202026-09-02%20000710.png"
+                 alt="Dental Assessment Form">
+
+            <img src="Screenshot%202026-09-02%20000918.png"
+                 alt="Appointment Booking Calendar">
+
+            <img src="YOUR-THIRD-SCREENSHOT-FILENAME.png"
+                 alt="Appointment Details">
+        `;
     }
 
     modal.style.display = "block";
