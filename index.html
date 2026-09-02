@@ -390,16 +390,21 @@ footer {
   box-shadow: 0 15px 40px rgba(37, 99, 235, 0.25);
 }
 
-@media (max-width: 700px) {
-  .project-gallery {
-    grid-template-columns: 1fr;
-  }
-}
-    .evidence-buttons {
+.evidence-buttons {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 25px;
     margin-top: 35px;
+}
+
+@media (max-width: 700px) {
+    .project-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .evidence-buttons {
+        grid-template-columns: 1fr;
+    }
 }
 
 .evidence-card {
@@ -411,6 +416,7 @@ footer {
     text-align: left;
     cursor: pointer;
     transition: 0.3s ease;
+}
 }
 
 .evidence-card:hover {
