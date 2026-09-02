@@ -393,23 +393,15 @@ footer {
 .evidence-buttons {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-top: 35px;
+    gap: 24px;
+    margin: 35px auto 0;
     max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .evidence-card {
-    background: #08111f;
-    border: 1px solid rgba(59, 130, 246, 0.35);
-    border-radius: 16px;
-    padding: 26px;
-    color: white;
-    text-align: left;
-    cursor: pointer;
-    transition: 0.3s ease;
-    min-height: 210px;
+    min-height: 230px;
+    padding: 28px;
+    box-sizing: border-box;
 }
 }
 
@@ -424,13 +416,13 @@ footer {
 }
 
 .evidence-card h4 {
-    font-size: 28px;
     margin: 15px 0 10px;
+    font-size: 26px;
 }
 
 .evidence-card p {
-    font-size: 16px;
     margin: 0;
+    font-size: 16px;
 }
 }
   .evidence-modal {
@@ -485,6 +477,7 @@ footer {
     .evidence-buttons {
         grid-template-columns: 1fr;
     }
+  }
     .modal-gallery {
         grid-template-columns: 1fr;
     }
