@@ -425,18 +425,22 @@ footer {
     color: #8fb3df;
     margin: 0;
     font-size: 16px;
+
 }
-}
- .evidence-modal {
+.evidence-modal {
     display: none;
     position: fixed !important;
-    inset: 0 !important;
-    width: 100vw;
-    height: 100vh;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+
+    width: 100vw !important;
+    height: 100vh !important;
 
     background: rgba(0, 0, 0, 0.85);
 
-    z-index: 999999;
+    z-index: 999999 !important;
 
     overflow-y: auto;
 
@@ -452,11 +456,13 @@ footer {
 
     width: 100%;
     max-width: 1100px;
+
     max-height: calc(100vh - 60px);
 
     margin: 0 auto;
 
     background: #07101d;
+
     border: 1px solid rgba(59, 130, 246, 0.35);
     border-radius: 20px;
 
