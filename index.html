@@ -836,4 +836,88 @@ footer {
 <div id="evidenceModal" class="evidence-modal">
 
     <div class="modal-content">
+        <button class="close-modal" onclick="closeEvidence()">×</button>
 
+        <h2 id="modalTitle"></h2>
+
+        <div id="modalImages" class="modal-gallery"></div>
+
+    </div>
+</div>
+
+<script>
+function openEvidence(type) {
+
+    const modal = document.getElementById("evidenceModal");
+    const title = document.getElementById("modalTitle");
+    const images = document.getElementById("modalImages");
+
+    images.innerHTML = "";
+
+    if (type === "crm") {
+
+        title.textContent = "CRM Evidence";
+
+        images.innerHTML = `
+            <img src="Screenshot%202026-08-25%20134046.png"
+                 alt="CRM Setup">
+            <img src="Screenshot%202026-08-25%20134122.png"
+                 alt="Patient Journey">
+            <img src="Screenshot%202026-08-25%20134202.png"
+                 alt="CRM Workflow">
+        `;
+
+    }
+
+    if (type === "automation") {
+
+        title.textContent = "Automation Evidence";
+
+        images.innerHTML = `
+            <img src="Screenshot%202026-08-25%20134046.png"
+                 alt="Dental Appointment Confirmation and Reminder Workflow">
+            <img src="Screenshot%202026-08-25%20134122.png"
+                 alt="Review Request Follow-Up Workflow">
+            <img src="Screenshot%202026-08-25%20134202.png"
+                 alt="Recall Reminder Workflow">
+            <img src="Screenshot%202026-08-25%20134219.png"
+                 alt="GHL Automation Workflow">
+        `;
+
+    }
+
+    if (type === "appointment") {
+
+        title.textContent = "Appointment Booking";
+
+        images.innerHTML = `
+            <img src="Screenshot%202026-09-02%20000710.png"
+                 alt="Dental Assessment Form">
+            <img src="Screenshot%202026-09-02%20000918.png"
+                 alt="Appointment Booking Calendar">
+            <img src="Screenshot%202026-09-02%20171030.png"
+                 alt="Appointment Details">
+        `;
+
+    }
+
+    modal.style.display = "block";
+}
+
+function closeEvidence() {
+    document.getElementById("evidenceModal").style.display = "none";
+}
+
+window.onclick = function(event) {
+
+    const modal = document.getElementById("evidenceModal");
+
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+
+}
+</script>
+
+</body>
+</html>
