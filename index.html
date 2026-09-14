@@ -429,33 +429,38 @@ footer {
 }
  .evidence-modal {
     display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
+    position: fixed !important;
+    inset: 0 !important;
     width: 100vw;
     height: 100vh;
+
     background: rgba(0, 0, 0, 0.85);
+
     z-index: 999999;
+
     overflow-y: auto;
 
-    box-sizing: border-box;
     padding: 30px;
+    box-sizing: border-box;
 
     align-items: center;
     justify-content: center;
 }
 
 .modal-content {
+    position: relative;
+
     width: 100%;
     max-width: 1100px;
     max-height: calc(100vh - 60px);
 
+    margin: 0 auto;
+
     background: #07101d;
     border: 1px solid rgba(59, 130, 246, 0.35);
     border-radius: 20px;
-    padding: 35px;
 
-    position: relative;
+    padding: 35px;
     box-sizing: border-box;
 
     overflow-y: auto;
@@ -479,14 +484,15 @@ footer {
 
 .modal-gallery {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+    margin-top: 25px;
 }
 
 .modal-gallery img {
     width: 100%;
-    border-radius: 14px;
-    border: 1px solid rgba(59, 130, 246, 0.3);
+    height: auto;
+    display: block;
+    border-radius: 12px;
 }
 
 @media (max-width: 700px) {
@@ -584,112 +590,6 @@ footer {
 
   </section>
 
-
-  <!-- SERVICES -->
-  <section id="services">
-
-    <div class="section-title">
-
-      <h2>What I Can Build</h2>
-
-      <p>
-        Practical GHL systems for managing leads and customer communication.
-      </p>
-
-    </div>
-
-
-    <div class="services">
-
-      <div class="service">
-
-        <div class="service-number">01</div>
-
-        <h3>CRM Setup</h3>
-
-        <p>
-          Organize contacts, customer information, tags,
-          pipelines, and lead stages inside GHL.
-        </p>
-
-      </div>
-
-
-      <div class="service">
-
-        <div class="service-number">02</div>
-
-        <h3>Lead Capture Forms</h3>
-
-        <p>
-          Create forms that collect customer information
-          and connect submissions to the CRM.
-        </p>
-
-      </div>
-
-
-      <div class="service">
-
-        <div class="service-number">03</div>
-
-        <h3>Appointment Booking</h3>
-
-        <p>
-          Configure calendars, availability, booking forms,
-          appointment settings, and confirmation flows.
-        </p>
-
-      </div>
-
-
-      <div class="service">
-
-        <div class="service-number">04</div>
-
-        <h3>Workflow Automation</h3>
-
-        <p>
-          Build automated follow-ups for leads,
-          appointments, reminders, and customer communication.
-        </p>
-
-      </div>
-
-
-      <div class="service">
-
-        <div class="service-number">05</div>
-
-        <h3>Pipeline Management</h3>
-
-        <p>
-          Create organized stages so businesses can track
-          leads from inquiry to appointment and follow-up.
-        </p>
-
-      </div>
-
-
-      <div class="service">
-
-        <div class="service-number">06</div>
-
-        <h3>System Organization</h3>
-
-        <p>
-          Connect forms, calendars, contacts, and workflows
-          into one organized customer management system.
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- PROCESS -->
   <section id="process" class="process">
 
     <div class="section-title">
@@ -764,8 +664,6 @@ footer {
 
   </section>
 
-
-  <!-- PROJECT -->
   <section id="projects">
 
     <div class="section-title">
@@ -820,8 +718,6 @@ footer {
 
   </section>
 
-
-  <!-- CONTACT -->
   <section id="contact" class="contact">
 
     <h2>Let's Work Together</h2>
@@ -873,12 +769,9 @@ function openEvidence(type) {
         title.textContent = "CRM Evidence";
 
         images.innerHTML = `
-            <img src="Screenshot%202026-08-25%20134046.png"
-                 alt="CRM Setup">
-            <img src="Screenshot%202026-08-25%20134122.png"
-                 alt="Patient Journey">
-            <img src="Screenshot%202026-08-25%20134202.png"
-                 alt="CRM Workflow">
+            <img src="Screenshot%202026-08-25%20134046.png" alt="CRM Setup">
+            <img src="Screenshot%202026-08-25%20134122.png" alt="Patient Journey">
+            <img src="Screenshot%202026-08-25%20134202.png" alt="CRM Workflow">
         `;
 
     }
@@ -888,14 +781,10 @@ function openEvidence(type) {
         title.textContent = "Automation Evidence";
 
         images.innerHTML = `
-            <img src="Screenshot%202026-08-25%20134046.png"
-                 alt="Dental Appointment Confirmation and Reminder Workflow">
-            <img src="Screenshot%202026-08-25%20134122.png"
-                 alt="Review Request Follow-Up Workflow">
-            <img src="Screenshot%202026-08-25%20134202.png"
-                 alt="Recall Reminder Workflow">
-            <img src="Screenshot%202026-08-25%20134219.png"
-                 alt="GHL Automation Workflow">
+            <img src="Screenshot%202026-08-25%20134046.png" alt="Dental Appointment Confirmation">
+            <img src="Screenshot%202026-08-25%20134122.png" alt="Review Request Follow-Up">
+            <img src="Screenshot%202026-08-25%20134202.png" alt="Recall Reminder">
+            <img src="Screenshot%202026-08-25%20134219.png" alt="GHL Automation Workflow">
         `;
 
     }
@@ -905,33 +794,12 @@ function openEvidence(type) {
         title.textContent = "Appointment Booking";
 
         images.innerHTML = `
-            <img src="Screenshot%202026-09-02%20000710.png"
-                 alt="Dental Assessment Form">
-            <img src="Screenshot%202026-09-02%20000918.png"
-                 alt="Appointment Booking Calendar">
-            <img src="Screenshot%202026-09-02%20171030.png"
-                 alt="Appointment Details">
+            <img src="Screenshot%202026-09-02%20000710.png" alt="Dental Assessment Form">
+            <img src="Screenshot%202026-09-02%20000918.png" alt="Appointment Booking Calendar">
+            <img src="Screenshot%202026-09-02%20171030.png" alt="Appointment Details">
         `;
 
     }
 
-   modal.style.display = "flex";
+    modal.style.display = "flex";
 }
-
-function closeEvidence() {
-    document.getElementById("evidenceModal").style.display = "none";
-}
-
-window.onclick = function(event) {
-
-    const modal = document.getElementById("evidenceModal");
-
-    if (event.target === modal) {
-        modal.style.display = "none";
-    }
-
-}
-</script>
-
-</body>
-</html>
