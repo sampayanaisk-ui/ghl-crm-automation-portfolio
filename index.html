@@ -687,10 +687,16 @@ footer {
     <div class="project-gallery">
 <div class="evidence-buttons">
 
-  <button type="button" class="evidence-card" onclick="openEvidence('crm')">
+  <button type="button"
+        class="evidence-card"
+        onclick="openEvidence('crm')">
+
     <span>📊</span>
+
     <h4>CRM Evidence</h4>
+
     <p>View CRM setup & patient journey</p>
+
 </button>
 
   <button type="button" class="evidence-card" onclick="openEvidence('automation')">
@@ -762,7 +768,6 @@ function openEvidence(type) {
     images.innerHTML = "";
 
     if (type === "crm") {
-
         title.textContent = "CRM Evidence";
 
         images.innerHTML = `
@@ -770,7 +775,6 @@ function openEvidence(type) {
             <img src="Screenshot%202026-08-25%20134122.png" alt="Patient Journey">
             <img src="Screenshot%202026-08-25%20134202.png" alt="CRM Workflow">
         `;
-
     }
 
     if (type === "automation") {
