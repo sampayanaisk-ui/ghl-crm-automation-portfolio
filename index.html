@@ -777,9 +777,8 @@ function openEvidence(type) {
         title.textContent = "CRM Evidence";
 
         images.innerHTML = `
-            <img src="Screenshot%202026-08-25%20134046.png" alt="CRM Setup">
-            <img src="Screenshot%202026-08-25%20134122.png" alt="Patient Journey">
-            <img src="Screenshot%202026-08-25%20134202.png" alt="CRM Workflow">
+            <img src="Screenshot%202026-09-02%20000918.png" alt="CRM Setup">
+            <img src="Screenshot%202026-09-02%20000710.png" alt="Patient Journey">       
         `;
     }
 
@@ -797,16 +796,14 @@ function openEvidence(type) {
     }
 
     if (type === "appointment") {
+    title.textContent = "Appointment Booking";
 
-        title.textContent = "Appointment Booking";
-
-        images.innerHTML = `
-            <img src="Screenshot%202026-09-02%20000710.png" alt="Dental Assessment Form">
-            <img src="Screenshot%202026-09-02%20000918.png" alt="Appointment Booking Calendar">
-            <img src="Screenshot%202026-09-02%20171030.png" alt="Appointment Details">
-        `;
-
-    }
+    images.innerHTML = `
+        <img src="Screenshot%202026-09-02%20170931.png" alt="Dental Assessment Form">
+        <img src="Screenshot%202026-09-02%20171003.png" alt="Appointment Booking Calendar">
+        <img src="Screenshot%202026-09-02%20171030.png" alt="Appointment Details">
+    `;
+}
 
  modal.style.display = "flex";
 }
